@@ -1,0 +1,334 @@
+{
+  "Uuid": "0449aad5-a7a3-4572-915c-9e1eb7a46714",
+  "IsCustomNode": false,
+  "Description": null,
+  "Name": "Quick View Placement",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Function, DynamoCore",
+      "FunctionSignature": "f153d48d-85dd-4a7e-8ba2-91b08d81e5e7",
+      "FunctionType": "Graph",
+      "NodeType": "FunctionNode",
+      "Id": "f94b08667ef448f7951f350c7cf23193",
+      "Inputs": [
+        {
+          "Id": "69450c61c4804b358dbc8708e59243fb",
+          "Name": "refresh",
+          "Description": "bool\nDefault value : true",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "920acb84b16945cd9747ab5ce0e319a7",
+          "Name": "element(s)",
+          "Description": "return value",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Gets the currently selected elements. Connect a boolean switch to refresh the selection."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Function, DynamoCore",
+      "FunctionSignature": "f153d48d-85dd-4a7e-8ba2-91b08d81e5e7",
+      "FunctionType": "Graph",
+      "NodeType": "FunctionNode",
+      "Id": "3a7c2d921756456cac59385d05becee8",
+      "Inputs": [
+        {
+          "Id": "3c1e0f0bde614ac4b60a3cffe93d2003",
+          "Name": "refresh",
+          "Description": "bool\nDefault value : true",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "2bf0064e257b4101a34804bd0c50d2db",
+          "Name": "element(s)",
+          "Description": "return value",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Gets the currently selected elements. Connect a boolean switch to refresh the selection."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Rhythm.Revit.Elements.Viewport.Create@Revit.Elements.Views.Sheet,Revit.Elements.Element,Autodesk.DesignScript.Geometry.Point",
+      "Id": "068419baa2d5442e89ff0588c06b3b0f",
+      "Inputs": [
+        {
+          "Id": "80065999972a437e92a85451a31012ab",
+          "Name": "sheet",
+          "Description": "The sheet to place views on.\n\nSheet",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "14648c17507e4f1f9b10b9cfcf9f201d",
+          "Name": "view",
+          "Description": "The view to place.\n\nElement",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "cf5462b082ba4979b003a87703b5c24f",
+          "Name": "location",
+          "Description": "The location of the view.\n\nPoint",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "1e11e6f9963d414cb9120a0c3edc81f1",
+          "Name": "Result",
+          "Description": "The result",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "This node will place the given view on the given sheet, if possible. For floor plan views: They cannot be on any other sheets. Now supports schedules!\n\nViewport.Create (sheet: Sheet, view: Element, location: Point): var[]..[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Autodesk.DesignScript.Geometry.Point.ByCoordinates@double,double",
+      "Id": "45a7ef339cda49bcaa3f64f31fa9a8fa",
+      "Inputs": [
+        {
+          "Id": "750b2f500dcd4393b33305f53208427f",
+          "Name": "x",
+          "Description": "double\nDefault value : 0",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "904189458ff547f9b59957b72e58f3b0",
+          "Name": "y",
+          "Description": "double\nDefault value : 0",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "f0926eb5574a4dca94909f305b36c53a",
+          "Name": "Point",
+          "Description": "Point",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Form a Point in the XY plane given two 2 cartesian coordinates. The Z component is 0.\n\nPoint.ByCoordinates (x: double = 0, y: double = 0): Point"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "920acb84b16945cd9747ab5ce0e319a7",
+      "End": "80065999972a437e92a85451a31012ab",
+      "Id": "d17bc9a9967a4de9beda6f38ad63516f"
+    },
+    {
+      "Start": "2bf0064e257b4101a34804bd0c50d2db",
+      "End": "14648c17507e4f1f9b10b9cfcf9f201d",
+      "Id": "8dbc5a97119c412c87d5768e11a4a599"
+    },
+    {
+      "Start": "f0926eb5574a4dca94909f305b36c53a",
+      "End": "cf5462b082ba4979b003a87703b5c24f",
+      "Id": "df20e05966654bbfa21679ccb757345c"
+    }
+  ],
+  "Dependencies": [
+    "f153d48d-85dd-4a7e-8ba2-91b08d81e5e7"
+  ],
+  "NodeLibraryDependencies": [
+    {
+      "Name": "spring nodes",
+      "Version": "204.1.0",
+      "ReferenceType": "Package",
+      "Nodes": [
+        "f94b08667ef448f7951f350c7cf23193",
+        "3a7c2d921756456cac59385d05becee8"
+      ]
+    },
+    {
+      "Name": "Rhythm",
+      "Version": "2020.9.8",
+      "ReferenceType": "Package",
+      "Nodes": [
+        "068419baa2d5442e89ff0588c06b3b0f"
+      ]
+    }
+  ],
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.6.1.8786",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Background Preview",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "NodeViews": [
+      {
+        "Id": "f94b08667ef448f7951f350c7cf23193",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "ꟿ Collect.CurrentSelection",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 445.68625224246989,
+        "Y": 366.6821664982856
+      },
+      {
+        "Id": "3a7c2d921756456cac59385d05becee8",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "ꟿ Collect.CurrentSelection",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 439.0,
+        "Y": 579.60128011836855
+      },
+      {
+        "Id": "068419baa2d5442e89ff0588c06b3b0f",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "ʳʰʸᵗʰᵐ|Viewport.Create",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 974.04251902658007,
+        "Y": 365.7096771631866
+      },
+      {
+        "Id": "45a7ef339cda49bcaa3f64f31fa9a8fa",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Point.ByCoordinates",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 820.0,
+        "Y": 534.0
+      }
+    ],
+    "Annotations": [
+      {
+        "Id": "d38346676a3d43078ed0d8063f46f798",
+        "Title": "Quick Place View on Sheet",
+        "Nodes": [
+          "068419baa2d5442e89ff0588c06b3b0f",
+          "3a7c2d921756456cac59385d05becee8",
+          "f94b08667ef448f7951f350c7cf23193",
+          "222ac38d8cab45efb91bd85fdbdc9cf1",
+          "49914613e179409db95453ac169a4f0c",
+          "6ba6fc9687704ef0a3492167fb4b4895"
+        ],
+        "Left": 429.0,
+        "Top": 277.7096771631866,
+        "Width": 751.04251902658007,
+        "Height": 394.89160295518195,
+        "FontSize": 36.0,
+        "InitialTop": 330.7096771631866,
+        "InitialHeight": 372.60128011836855,
+        "TextblockHeight": 43.0,
+        "Background": "#FF48B9FF"
+      },
+      {
+        "Id": "222ac38d8cab45efb91bd85fdbdc9cf1",
+        "Title": "Custom Node: spring nodes v.204.1.0",
+        "Nodes": [],
+        "Left": 445.68625224246989,
+        "Top": 331.6821664982856,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "49914613e179409db95453ac169a4f0c",
+        "Title": "Custom Node: spring nodes v.204.1.0",
+        "Nodes": [],
+        "Left": 439.0,
+        "Top": 544.60128011836855,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "6ba6fc9687704ef0a3492167fb4b4895",
+        "Title": "Custom Node: Rhythm v.2020.9.8",
+        "Nodes": [],
+        "Left": 974.04251902658007,
+        "Top": 330.7096771631866,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      }
+    ],
+    "X": 0.0,
+    "Y": 0.0,
+    "Zoom": 1.0
+  }
+}
